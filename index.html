@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granny Web Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="blocker">
+        <div id="instructions">
+            <h1 class="title">GRANNY: MANSION</h1>
+
+            <div id="login-container">
+                <input type="text" id="player-name" placeholder="Enter your name..." maxlength="15" />
+                <button id="start-btn">Join Nightmare</button>
+            </div>
+
+            <p class="controls">
+                W, A, S, D = Move<br />
+                MOUSE = Look around<br />
+                ESCAPE = Pause<br />
+                T = Open Chat<br />
+                E = Interact (Locks/Items)
+            </p>
+        </div>
+    </div>
+
+    <div id="game-over" class="hidden">
+        <h1>YOU WERE CAUGHT!</h1>
+        <p>Granny found you...</p>
+        <button id="restart-btn">Try Again</button>
+    </div>
+
+    <div id="win-screen" class="hidden">
+        <h1>ESCAPED!</h1>
+        <p>You found your way out of the house...</p>
+        <button id="win-restart-btn">Play Again</button>
+    </div>
+
+    <!-- Day Overlay -->
+    <div id="day-overlay" class="hidden">
+        <h1 id="day-text">Day 1</h1>
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <input type="text" id="chat-input" placeholder="Press T to chat..." maxlength="100" />
+    </div>
+
+    <div id="inventory-ui">
+        <div class="inv-slot" id="slot-1">1</div>
+        <div class="inv-slot" id="slot-2">2</div>
+        <div class="inv-slot" id="slot-3">3</div>
+    </div>
+
+    <div id="interaction-prompt" class="hidden">Press E to Interact</div>
+
+    <!-- Import Map for Three.js and Supabase -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+            "@supabase/supabase-js": "https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"
+        }
+    }
+    </script>
+
+    <!-- Load Supabase UMD build explicitly to attach to window -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
