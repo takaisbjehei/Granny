@@ -15,7 +15,7 @@ export class Granny {
 
         const headGeo = new THREE.SphereGeometry(0.7, 16, 16);
         const headMat = new THREE.MeshStandardMaterial({ color: 0xcccccc, roughness: 0.5 }); // Pale face
-        const head = new THREE.Mesh(headGeo, headMat);
+        
         head.position.y = 3.6;
         this.mesh.add(head);
 
@@ -66,3 +66,4 @@ export class Granny {
         this.mesh.position.copy(this.initialPosition);
     }
 }
+
